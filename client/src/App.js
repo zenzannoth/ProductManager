@@ -1,11 +1,18 @@
 import './App.css';
-import ProductForm from "./views/Main";
+import { Router } from "@reach/router";
+import Main from "./views/Main";
+import Detail from "./views/Detail";
+
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ProductForm />
+      <Router>
+        <Main path="/products/" />
+        <Detail path="/products/:id" />
+      </Router>
       </header>
     </div>
   );
