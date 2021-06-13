@@ -1,5 +1,7 @@
+import '../App.css';
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "@reach/router";
 
 const Detail = (props) => {
     const [product, setProduct] = useState({});
@@ -12,10 +14,11 @@ const Detail = (props) => {
 
     return (
         <div>
-            <p>Product Name: {product.title}</p>
+            <h1 style={{textDecoration: "none"}}>Product Name: {product.title}</h1>
             <p>Product Price: ${product.price}</p>
-            <p>PRoduct Description: {product.description}</p>
+            <p>Product Description: {product.description}</p>
             <p>Product ID: {product._id}</p>
+            <p><Link to={"/products/"} className="form-link">Back to Form</Link></p>
         </div>
     )
 }
